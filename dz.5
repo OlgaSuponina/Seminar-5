@@ -1,0 +1,61 @@
+task//34
+
+int[] array = new int[10];
+for (int i = 0; i < array.Length; i++)
+    array[i] = new Random().Next(100, 1000);
+
+Console.WriteLine("[" + string.Join(", ", array) + "]");
+int count = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] % 2 == 0)
+        count++; // count = count + 1;
+}
+Console.WriteLine("Кол-во четных элементов в массиве: " + count);
+
+
+task//36
+
+
+Console.WriteLine("Введите кол-во элементов в массиве: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n]; 
+for (int i = 0; i < 4; i++)
+{
+    Console.WriteLine("Введите число: ");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.WriteLine("[" + string.Join(", ", array) + "]");
+int sum_pol = 0;
+int sum_neg = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] > 0)
+        sum_pol = sum_pol + array[i];
+    else
+        sum_neg = sum_neg + array[i];    
+}
+Console.WriteLine("Сумма отрицательных равна: " + sum_neg);
+
+
+
+task//38
+
+double[] array = new double[10];
+double x;
+for (int i = 0; i < array.Length; i++)
+{    
+    x =  new Random().NextDouble() * 100;
+    array[i] = Math.Round(x, 4);
+}
+Console.WriteLine("[" + string.Join(", ", array) + "]");
+double max_array = array[0], min_array = array[0];
+for (int i = 1; i < array.Length; i++)
+{
+    if (array[i] > max_array)
+        max_array = array[i];
+    if (array[i] < min_array)
+        min_array = array[i];
+}
+Console.WriteLine(max_array - min_array);
